@@ -1,0 +1,6 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=" 72.18.135.49, 1533";Initial Catalog=VideotelDigital_nop;Integrated Security=False;Persist Security Info=False;User ID=iusr_videotel_sql;Password=Videotel34;MultipleActiveResultSets=True
+
+
+DataProvider: sqlserver
+DataConnectionString: Data Source=" opti780-opti780";Initial Catalog=VideotelDigital_nop;Integrated Security=False;Persist Security Info=False;User ID=iusr_videotel_sql;Password=Videotel34;MultipleActiveResultSets=True

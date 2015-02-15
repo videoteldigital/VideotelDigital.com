@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E95E4CC6-C474-4E5E-9128-A5CA1B77B6E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nop.Plugin.VideotelDigital.TestimonialSlider</RootNamespace>
+    <AssemblyName>Nop.Plugin.VideotelDigital.TestimonialSlider</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Presentation\Nop.Web\Plugins\VideotelDigital.TestimonialSlider\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.3.3.1\lib\net40\Autofac.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Nop.Core">
+      <HintPath>..\..\Libraries\Nop.Core\bin\Debug\Nop.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Nop.Services">
+      <HintPath>..\..\Libraries\Nop.Services\bin\Debug\Nop.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Nop.Web.Framework">
+      <HintPath>..\..\Presentation\Nop.Web.Framework\obj\Release\Nop.Web.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Presentation\Nop.Web\bin\System.Web.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Presentation\Nop.Web\bin\System.Web.Razor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\VideotelDigitalTestimonialSlider.cs" />
+    <Compile Include="Infrastructure\Cache\ModelCacheEventConsumer.cs" />
+    <Compile Include="Infrastructure\DependencyRegistrar.cs" />
+    <Compile Include="Models\ConfigurationModel.cs" />
+    <Compile Include="Models\PublicInfoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideotelDigitalTestimonialSliderPlugin.cs" />
+    <Compile Include="VideotelDigitalTestimonialSliderSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AnythingSlider\css\animate.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\css\anythingslider.css" />
+    <Content Include="Content\AnythingSlider\css\theme-metallic.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\images\arrows-metallic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.fx.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.fx.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.video.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.anythingslider.video.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery.easing.1.2.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\jquery2.min.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\AnythingSlider\js\swfobject.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\cssSlider\cssslider.html" />
+    <Content Include="Content\cssSlider\data1\images\californiasl.jpg" />
+    <Content Include="Content\cssSlider\data1\images\criswellautocare.jpg" />
+    <Content Include="Content\cssSlider\data1\images\foxwoods.jpg" />
+    <Content Include="Content\cssSlider\data1\images\goodwill.jpg" />
+    <Content Include="Content\cssSlider\data1\images\kgfitness.jpg" />
+    <Content Include="Content\cssSlider\data1\images\ovation.jpg" />
+    <Content Include="Content\cssSlider\data1\images\renaissancehotels.jpg" />
+    <Content Include="Content\cssSlider\data1\images\rockwellcollins.jpg" />
+    <Content Include="Content\cssSlider\data1\images\saussyburbank.jpg" />
+    <Content Include="Content\cssSlider\data1\images\sciencemuseum.jpg" />
+    <Content Include="Content\cssSlider\data1\images\strikeindustries.jpg" />
+    <Content Include="Content\cssSlider\data1\images\thetravelerschannel.jpg" />
+    <Content Include="Content\cssSlider\data1\images\unitedgrinding.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\californiasl.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\criswellautocare.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\foxwoods.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\goodwill.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\kgfitness.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\ovation.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\renaissancehotels.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\rockwellcollins.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\saussyburbank.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\sciencemuseum.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\strikeindustries.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\thetravelerschannel.jpg" />
+    <Content Include="Content\cssSlider\data1\tooltips\unitedgrinding.jpg" />
+    <Content Include="Content\cssSlider\engine1\basiccontrols.svg" />
+    <Content Include="Content\cssSlider\engine1\ie.css" />
+    <Content Include="Content\cssSlider\engine1\ie.js" />
+    <Content Include="Content\cssSlider\engine1\style.css" />
+    <Content Include="Content\cssSlider\iframe_cssslider.html" />
+    <Content Include="Description.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="web.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\AnythingSlider\css\LESS\theme-metallic.less">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\cssSlider\engine1\basiccontrols.eot" />
+    <None Include="Content\cssSlider\engine1\basiccontrols.ttf" />
+    <None Include="Content\cssSlider\engine1\basiccontrols.woff" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Views\VideotelDigitalTestimonialSlider\Configure.cshtml" />
+    <EmbeddedResource Include="Views\VideotelDigitalTestimonialSlider\PublicInfo.cshtml" />
+    <None Include="web.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

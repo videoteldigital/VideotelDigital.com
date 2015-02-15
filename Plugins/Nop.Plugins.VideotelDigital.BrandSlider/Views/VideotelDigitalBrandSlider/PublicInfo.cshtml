@@ -1,0 +1,156 @@
+﻿@model Nop.Plugin.VideotelDigital.BrandSlider.Models.BrandListModels
+<!DOCTYPE html>
+<style>
+    #brand-slider {
+        max-width: 848px;
+    }
+
+        #brand-slider ul {
+            list-style: none;
+            border: 0;
+            padding: 0;
+        }
+
+        #brand-slider li {
+            list-style: none;
+            border: 0;
+            padding: 0;
+            line-height: 150px;
+            vertical-align: middle;
+        }
+
+        #brand-slider ul li img {
+            max-width: 250px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+
+    .brand-image {
+        float: left;
+        line-height: 150px;
+        vertical-align: middle;
+        margin: 15px;
+    }
+
+    .wraptocenter {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        .wraptocenter * {
+            vertical-align: middle;
+        }
+
+    .wraptocenter {
+        display: block;
+    }
+
+    @@media screen and (max-width: 400px) {
+
+        .brand-list-small {
+            display: block;
+        }
+
+        .brand-list-big {
+            display: none;
+        }
+    }
+
+    @@media screen and (min-width: 401px) {
+
+        .brand-list-small {
+            display: none;
+        }
+
+        .brand-list-big {
+            display: bloack;
+        }
+    }
+</style>
+<center>
+    <div style="font-size: 28px;font-weight:normal;">@Model.SectionHeader</div>
+</center>
+<center>
+    <div id="brand-slider">
+        <div>
+            @* first, put all the images on and make them display:none. *@
+            <ul id="BrandList" class="brand-list-big">
+                @for (int i = 0; i < Model.Brands.Count - 1; i += 3)
+                {
+                    if (!String.IsNullOrEmpty(Model.Brands[i].PictureUrl))
+                    {
+                        <li style="display:none;">
+                            <div class="wraptocenter">
+
+                                <img src='@Model.Brands[i].PictureUrl' alt='@Model.Brands[i].Company' title='@Model.Brands[i].Company' onclick="window.location='@Model.Brands[i].Link'" style="margin:15px;" />
+                                @if (i + 1 <= Model.Brands.Count - 1)
+                                {
+                                    <img src='@Model.Brands[i+1].PictureUrl' alt='@Model.Brands[i+1].Company' title='@Model.Brands[i+1].Company' onclick="window.location='@Model.Brands[i+1].Link'" style="margin:15px;" />
+                                }
+                                @if (i + 2 <= Model.Brands.Count - 1)
+                                {
+                                    <img src='@Model.Brands[i+2].PictureUrl' alt='@Model.Brands[i+2].Company' title='@Model.Brands[i+2].Company' onclick="window.location='@Model.Brands[i+2].Link'" style="margin:15px;" />
+                                }
+
+                            </div>
+
+                            <div style="clear:both;"></div>
+                        </li>
+                    }
+                }
+            </ul>
+            <ul id="BrandList2" class="brand-list-small" style="">
+                @for (int i = 0; i < Model.Brands.Count - 1; i++)
+                {
+                    if (!String.IsNullOrEmpty(Model.Brands[i].PictureUrl))
+                    {
+                        <li style="display:none;">
+                            <div class="wraptocenter">
+                                <img src='@Model.Brands[i].PictureUrl' alt='@Model.Brands[i].Company' title='@Model.Brands[i].Company' onclick="window.location='@Model.Brands[i].Link'" />
+                            </div>
+
+                            <div style="clear:both;"></div>
+                        </li>
+                    }
+                }
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</center>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    function startAnimations() {
+        $("#intro li").hide();
+
+        function loop() {
+            var $li = $("#BrandList li:first-child").fadeIn(3000, function () {
+                $li.fadeOut(3000, function () {
+                    $li.appendTo('#BrandList');;
+                    loop()
+                })
+            });
+        }
+        loop()
+    }
+    function startAnimations2() {
+        $("#intro li").hide();
+
+        function loop() {
+            var $li = $("#BrandList2 li:first-child").fadeIn(3000, function () {
+                $li.fadeOut(3000, function () {
+                    $li.appendTo('#BrandList2');;
+                    loop()
+                })
+            });
+        }
+        loop()
+    }
+    $(function () {
+        startAnimations();
+        startAnimations2();
+    });
+</script>

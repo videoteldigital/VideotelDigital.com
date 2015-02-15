@@ -1,0 +1,147 @@
+﻿@model FooterModel
+@using Nop.Web.Models.Common;
+@using Nop.Core.Infrastructure;
+@using Nop.Core;
+@using Nop.Services.Configuration;
+@using Nop.Core.Domain.Tax;
+@{
+    var workingLanguageId = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Id;
+
+    var storeId = EngineContext.Current.Resolve<IStoreContext>().CurrentStore.Id;
+    var pinterestUrl = EngineContext.Current.Resolve<ISettingService>().GetSettingByKey("allurethemesettings.pinteresturl", String.Empty, storeId, true);
+    var vimeoUrl = EngineContext.Current.Resolve<ISettingService>().GetSettingByKey("allurethemesettings.vimeourl", String.Empty, storeId, true);
+    var removeCopyright = EngineContext.Current.Resolve<ISettingService>().GetSettingByKey("allurethemesettings.removecopyright", false, storeId, true);
+}
+@*@Html.Action("TopicBlock", "Topic", new { systemName = "HomePageBrands" })*@
+<div style="margin: 40px 0 50px 0; position: relative;clear:both;">
+    @Html.Widget("VideotelBrandSlider")
+</div>
+<div style="margin: 40px 0 50px 0; position: relative;clear:both;">
+    @Html.Widget("VideotelTestimonialSlider")
+</div>
+<div class="footer">
+    @*<div class="footer-upper">
+        <div class="footer-centering">
+            <div class="footer-block social-sharing">
+                <h3>@T("SevenSpikes.Themes.Allure.Common.Social")</h3>
+                <ul>
+                    @if (!String.IsNullOrEmpty(Model.FacebookLink))
+                    {
+                        <li><a target="_blank" class="facebook" href="@Model.FacebookLink"></a></li>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.TwitterLink))
+                    {
+                        <li><a target="_blank" class="twitter" href="@Model.TwitterLink"></a></li>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.GooglePlusLink))
+                    {
+                        <li><a target="_blank" class="google" href="@Model.GooglePlusLink"></a></li>
+                    }
+                    @if (!String.IsNullOrEmpty(pinterestUrl))
+                    {
+                        <li><a target="_blank" class="pinterest" href="@pinterestUrl"></a></li>
+                    }
+                    @if (!String.IsNullOrEmpty(vimeoUrl))
+                    {
+                        <li><a target="_blank" class="vimeo" href="@vimeoUrl"></a></li>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.YoutubeLink))
+                    {
+                        <li><a target="_blank" class="youtube" href="@Model.YoutubeLink"></a></li>
+                    }
+                    <li><a target="_blank" class="rss" href="@Url.RouteUrl("BlogRSS", new { languageId = workingLanguageId })"></a></li>
+                </ul>
+            </div>
+            <div class="footer-block subscribe-block">
+                <h3>@T("Newsletter.Title")</h3>
+                @Html.Action("NewsletterBox", "Newsletter")
+            </div>            
+        </div>
+    </div>*@
+    <div class="footer-middle" style="background-color: #eeeeee;">
+        <div class="footer-centering">
+            <div class="footer-block footer-block-first">
+                <h3 style="border-bottom: solid 1px #55baee;">ABOUT US</h3>
+                <ul class="footer-menu">
+                    
+                    <li>@Html.Action("TopicBlock", "Topic", new { systemName = "HomePageAboutUs" })</li>
+                    <!--
+                        <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("aboutus") })">@T("AboutUs")</a></li>
+                    
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("privacyinfo") })">@T("PrivacyNotice")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("shippinginfo") })">@T("ShippingReturns")</a></li>
+                    <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("conditionsofUse") })">@T("ConditionsOfUse")</a></li>
+                    -->
+                </ul>
+            </div>
+            <div class="footer-block">
+                <div style="margin-right: 20px;">
+                    <h3 style="border-bottom: solid 1px #55baee;">CONTACT US</h3>
+                    @Html.Action("TopicBlock", "Topic", new { systemName = "FooterContactUs" })
+                    @*<ul class="footer-menu">
+                <li><a href="@Url.RouteUrl("ContactUs")">@T("ContactUs")</a> </li>
+                <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("FAQ") })">@T("SevenSpikes.Themes.Allure.Common.FAQ")</a></li>
+                <li><a href="@Url.RouteUrl("Sitemap")">@T("Sitemap")</a></li>
+                <li><a href="@Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("Help") })">@T("SevenSpikes.Themes.Allure.Common.Help")</a></li>
+            </ul>*@
+                </div>
+            </div>
+            <div class="footer-block">
+                <h3 style="border-bottom: solid 1px #55baee;">FOLLOW US</h3>
+                @Html.Action("TopicBlock", "Topic", new { systemName = "FooterFollowUs" })
+                @Html.Action("NewsletterBox", "Newsletter")
+            </div>
+           
+        </div>
+    </div>
+
+
+    <link href="~/Content/FooterResponsive/VideotelFooter.css" rel="stylesheet" />
+    <link href="~/Content/FooterResponsive/VideotelFooter.rtl.css" rel="stylesheet" />
+
+    <div class="footer-lower" style="background-color: #333333; color: #878787;">
+       
+        <div class="footer-centering">
+            
+            <div class="VideotelFooter">
+                <div class="vColumn">@Html.Action("TopicBlock", "Topic", new { systemName = "FooterBottomLinks_Col1" })</div>
+                <div class="vColumn">@Html.Action("TopicBlock", "Topic", new { systemName = "FooterBottomLinks_Col2" })</div>
+                <div class="vColumn">@Html.Action("TopicBlock", "Topic", new { systemName = "FooterBottomLinks_Col3" })</div>
+                <div class="vColumn">@Html.Action("TopicBlock", "Topic", new { systemName = "FooterBottomLinks_Col4" })</div>
+            </div>
+                
+                
+                @*<div style="text-align:left;">
+                @Html.Action("TopicBlock", "Topic", new { systemName = "FooterBottomLinks" })
+            </div>*@
+                @*<div class="accepted-payment-methods">
+                <ul>
+                    <li class="method1"></li>
+                    <li class="method2"></li>
+                    <li class="method3"></li>
+                    <li class="method4"></li>
+                </ul>
+            </div>
+
+            <div class="footer-powered-by">
+               
+            </div>
+
+            <div class="footer-disclaimer">
+                @T("Content.CopyrightNotice", DateTime.Now.Year, Model.StoreName)
+            </div>
+            @if (Model.DisplayTaxShippingInfoFooter)
+            {
+                var inclTax = EngineContext.Current.Resolve<IWorkContext>().TaxDisplayType == TaxDisplayType.IncludingTax;
+                <div class="footer-tax-shipping">
+                    @T(inclTax ? "Footer.TaxShipping.InclTax" : "Footer.TaxShipping.ExclTax", Url.RouteUrl("Topic", new { SeName = Html.GetTopicSeName("shippinginfo") }))
+                </div>
+            }
+            <div class="footer-store-theme">
+                @Html.Action("StoreThemeSelector", "Common")
+            </div>*@
+            </div>
+    </div>
+    @Html.Action("ChangeDeviceBlock", "Common")
+    @Html.Widget("footer")
+</div>

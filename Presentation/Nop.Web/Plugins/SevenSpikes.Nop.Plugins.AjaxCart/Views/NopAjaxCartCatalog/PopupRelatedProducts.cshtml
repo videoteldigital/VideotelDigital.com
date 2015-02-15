@@ -1,0 +1,19 @@
+﻿@model IList<ProductOverviewModel>
+
+@using Nop.Web.Models.Catalog;
+@using SevenSpikes.Nop.Plugins.AjaxCart.MVC;
+
+@if (Model.Count > 0)
+{
+    <div class="product-grid">
+        @*
+        <div class="title">
+            <strong>@T("Products.RelatedProducts")</strong>
+        </div>
+        *@
+        @foreach (var item in Model)
+        {
+            @Html.Partial(ViewNames.NopAjaxCart_ProductAddedToCartPopupProductItem, item);
+        }
+    </div>
+}

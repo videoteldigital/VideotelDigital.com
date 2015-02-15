@@ -1,0 +1,129 @@
+﻿/*
+* Copyright 2014 Seven Spikes Ltd. All rights reserved. (http://www.nop-templates.com)
+* http://www.nop-templates.com/t/licensinginfo
+*/
+
+/*=====================================================
+    
+    SMALLER MOBILE DEVICES
+
+=====================================================*/
+
+@media screen and (min-width: 240px) {
+
+/* GLOBAL */
+
+    .clearFilterOptionsAll {
+	    float: left;
+    }
+
+    .filter-block a.toggleControl {
+        padding: 12px 14px 12px 42px;
+        text-align: right;
+        background: url(images/arrow-down.png) no-repeat 15px center !important;
+    }
+        .filter-block a.toggleControl.closed {
+            background: url(images/rtl-arrow-right.png) no-repeat 15px center !important;
+        }
+    .filter-block a.clearFilterOptions, 
+    .filter-block a.clearPriceRangeFilter {
+        right: auto;
+        left: 2px;
+    }
+
+/* PRICE RANGE SLIDER */
+
+    .ui-slider-handle {
+        margin-left: auto;
+        margin-right: -1px;
+    }
+
+/* CHECKBOX MODE */
+
+    .filtersGroupPanel li > a {
+        padding: 12px 42px 12px 10px;
+        text-align: right;
+    }
+        .filtersGroupPanel li a:before {
+            left: auto;
+            right: 15px;
+        }
+
+/* COLOR SQUARE ATTRIBUTES */
+
+    .colorOptions .color-container {
+        left: auto;
+        right: 12px;
+    }
+
+/* PRODUCT GRID SELECTORS */
+
+    .jDropDown {
+        background: #fff url(images/arrow-dropdown.png) no-repeat left center;
+    }
+    .jDropDown > div {
+        text-align: right;
+    }
+    .jDropDown ul {
+        text-align: right;
+    }
+
+/* DROPDOWN MODE */
+
+        .filtersDropDown.jDropDown a {
+            padding-left: 0;
+            padding-right: 10px;
+        }
+
+
+/* AJAX LOADER */
+
+    .productPanelAjaxBusy {
+        left: auto;
+        right: 0;
+    }
+
+/* NO RESULTS POPUP */
+
+    .ajaxFilters .k-window-actions {
+	    right: auto;
+        left: 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .nopAjaxFilters7Spikes {
+        right: 0;
+        left: auto;
+        -webkit-transform: translate(320px);
+        -moz-transform: translate(320px);
+        -ms-transform: translate(320px);
+        transform: translate(320px);
+    }
+        .nopAjaxFilters7Spikes .close-filters span {
+            text-align: left;
+            background: url(images/rtl-mobile-filters-close.png) no-repeat 94% center;
+        }
+
+}
+
+/*=====================================================
+    
+    DESKTOP
+
+=====================================================*/
+
+@media screen and (min-width: 1001px) {
+
+    .filtersGroupPanel li > a {
+        padding: 10px 42px 10px 10px;
+    }
+    .filter-block a.toggleControl {
+        padding: 10px 8px 10px 42px;
+        text-align: right;
+    }
+    
+}

@@ -1,0 +1,29 @@
+﻿.VideotelFooter {
+    text-align:left;
+}
+
+.VideotelFooter .vColumn {
+    display: inline-block;
+    width: 24%;
+}
+
+.VideotelFooter .vColumn .vHeader {
+    font-weight:normal;
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    border-bottom: solid 1px #777777;
+    width: 90%;
+}
+
+.VideotelFooter .vColumn p {
+    margin: 0 0 10px 0;
+}
+
+.VideotelFooter .vColumn p a { text-decoration:none;}
+
+ .newsItemPicture {
+            width:15% !important;
+        }
+        .newsItemInfo {
+            width:75% !important;
+        }

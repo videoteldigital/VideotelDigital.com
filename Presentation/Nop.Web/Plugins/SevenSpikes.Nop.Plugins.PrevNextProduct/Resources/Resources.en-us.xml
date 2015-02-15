@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct">
+    <Value>Nop Prev-Next Product</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.PrevNextProduct.Admin.Settings">
+    <Value>Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings">
+    <Value>Nop Prev-Next Product Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.Enabled">
+    <Value>Enable</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.Enabled.Hint">
+    <Value>Enable the Nop Prev-Next plugin.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.EnabledAsWidget">
+    <Value>Enable As Widget</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.EnabledAsWidget.Hint">
+    <Value>Enable the Nop Prev-Next plugin as widget.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.EnableProductLooping">
+    <Value>Enable product looping</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.EnableProductLooping.Hint">
+    <Value>Enable product looping</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.Admin.Settings.GeneralSettings">
+    <Value>General Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.NextButtonText">
+    <Value>Next product</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Plugins.PrevNextProduct.PrevButtonText">
+    <Value>Previous product</Value>
+  </LocaleResource>
+</Language>

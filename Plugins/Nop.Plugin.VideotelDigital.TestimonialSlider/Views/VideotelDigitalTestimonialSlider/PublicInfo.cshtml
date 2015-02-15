@@ -1,0 +1,105 @@
+﻿@model Nop.Plugin.VideotelDigital.TestimonialSlider.Models.TestimonialListModels
+<!DOCTYPE html>
+<div style="margin: auto; text-align: center;">
+
+    <link rel="stylesheet" href="~/Plugins/VideotelDigital.TestimonialSlider/Content/cssSlider/engine1/style.css">
+    <!--[if IE]><link rel="stylesheet" href="~/Plugins/VideotelDigital.TestimonialSlider/Content/cssSlider/engine1/ie.css"><![endif]-->
+    <!--[if lte IE 9]><script type="text/javascript" src="~/Plugins/VideotelDigital.TestimonialSlider/Content/cssSlider/engine1/ie.js"></script><![endif]-->
+    <center>
+        <div style="font-size: 28px;font-weight:normal;">@Model.SectionHeader</div>
+    </center>
+    <div class='csslider1 autoplay '>
+        @{
+            int i = 0;
+            foreach (var tt in Model.Testimonials)
+            {
+                if(!String.IsNullOrEmpty(tt.PictureUrl))
+                {
+                    <input name="cs_anchor1" id='cs_slide1_@i' type="radio" class='cs_anchor slide'>
+                    <input name="cs_anchor1" id='cs_pause1_@i' type="radio" class='cs_anchor pause'>
+                    i += 1;
+                }
+            }
+        }
+        <input name="cs_anchor1" id='cs_play1' type="radio" class='cs_anchor' checked>
+        <ul style="height:100%;">
+            @{
+                i = 0;
+                foreach (var tt in Model.Testimonials)
+                {
+                    if(!String.IsNullOrEmpty(tt.PictureUrl) && !String.IsNullOrEmpty(tt.Company))
+                    { 
+                        <li class='num@(i) img slide'>
+                            <div onclick="window.location='@tt.Link'">
+                                <center><img src='@tt.PictureUrl' alt='@tt.Company testimonial' title='@tt.Company testimonial' /></center>
+                                <center class="videotelquote">@tt.Text</center><br /><br />
+                                <center class="videotelauthor">@tt.Author</center>
+                                <center class="videotelcompany">@tt.Company</center>
+                            </div>
+                        </li>
+                        i += 1;
+                    }
+                }
+            }
+        </ul>
+        
+        <div class='cs_play_pause'>
+            <label class='cs_play' for='cs_play1'><span><i></i></span></label>
+            @{
+                i = 0;
+                foreach (var tt in Model.Testimonials)
+                {
+                    if (!String.IsNullOrEmpty(tt.PictureUrl) && !String.IsNullOrEmpty(tt.Company))
+                    {
+                        <label class='cs_pause num@(i)' for='cs_pause1_@(i)'><span><i></i></span></label>
+                        i += 1;
+                    }    
+                }
+            }
+        </div>
+        <div class='cs_arrowprev'>
+            @{
+                i = 0;
+                foreach (var tt in Model.Testimonials)
+                {
+                    if (!String.IsNullOrEmpty(tt.PictureUrl) && !String.IsNullOrEmpty(tt.Company))
+                    {
+                        <label class='num@(i)' for='cs_slide1_@(i)'><span><i></i></span></label>
+                        i += 1;
+                    }
+                }
+            }
+        </div>
+        <div class='cs_arrownext'>
+            @{
+                i = 0;
+                foreach (var tt in Model.Testimonials)
+                {
+                    if (!String.IsNullOrEmpty(tt.PictureUrl) && !String.IsNullOrEmpty(tt.Company))
+                    {
+                        <label class='num@(i)' for='cs_slide1_@(i)'><span><i></i></span></label>
+                        i += 1;
+                    }
+                }
+            }
+        </div>
+
+        <div class='cs_bullets'>
+            @{
+                i = 0;
+                foreach (var tt in Model.Testimonials)
+                {
+                    if (!String.IsNullOrEmpty(tt.PictureUrl) && !String.IsNullOrEmpty(tt.Company))
+                    {
+                        <label class='num@(i)' for='cs_slide1_@(i)'>
+                            <span class='cs_point'></span>
+                            <span class='cs_thumb'><img src='@tt.PictureUrl' alt='@tt.Company testimonial' title='@tt.Company testimonial' /></span>
+                        </label>
+                        i += 1;
+                    }
+                }
+            }
+        </div>
+
+    </div>
+</div>
